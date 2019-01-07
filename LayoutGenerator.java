@@ -12,7 +12,7 @@ public class LayoutGenerator {
     ObservableList<Pendulum> listOfPendulums = FXCollections.observableArrayList();
     Rectangle rectangle;
 
-    public void generate(int amountOfSphere){
+    public void generate(int amountOfSphere, boolean isRandom){
 
         final Random random = new Random();
         float x = 350.0f;
@@ -20,9 +20,15 @@ public class LayoutGenerator {
         float rectangleWidth = 100.0f;
 
         for(int i = 0; i < amountOfSphere; i++){
-            double radius = minRadius + (maxRadius-minRadius) * random.nextDouble();
+            double radius = 0;
+            if(isRandom){
+                radius = minRadius + (maxRadius-minRadius) * random.nextDouble();
+            }
+            else{
+                radius = 30.0;
+            }
             x += radius;
-            listOfPendulums.add(new Pendulum(x,(float)radius,80.0f, 400.0f));
+            listOfPendulums.add(new Pendulum("Wahadło " + i,x,(float)radius,80.0f, 400.0f));
             rectangleWidth += 2 * radius;
             x += radius;
         }
