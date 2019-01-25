@@ -16,8 +16,6 @@ public class Counter {
     double[] result = new double[2];
 
 
-    double previous = 0;
-
 
     public double[] rhs(double[] y){
         double[] result;

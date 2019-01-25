@@ -149,7 +149,8 @@ public class Pendulum {
         float distance = (float)Math.sqrt((this.sphereX - neighbour.sphereX)
                 *(this.sphereX - neighbour.sphereX)+(this.sphereY - neighbour.sphereY)
                 *(this.sphereY - neighbour.sphereY));
-        if((distance + 0.001f) < this.sphereRadius + neighbour.sphereRadius) return true;
+        //distance + 0.001f
+        if((distance) <= this.sphereRadius + neighbour.sphereRadius) return true;
         return false;
     }
 
